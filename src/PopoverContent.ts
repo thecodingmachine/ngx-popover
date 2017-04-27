@@ -9,6 +9,7 @@ import {Popover} from "./Popover";
      [style.left]="left + 'px'"
      [class.in]="isIn"
      [class.fade]="animation"
+     [class.isShown]="isShown"
      style="display: block"
      role="popover">
     <div [hidden]="!closeOnMouseOutside" class="virtual-area"></div>
@@ -142,12 +143,14 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
         this.top = p.top;
         this.left = p.left;
         this.isIn = true;
+        this.isShown = true;
     }
 
     hide(): void {
         this.top = -10000;
         this.left = -10000;
         this.isIn = true;
+        this.isShown = false;
         this.popover.hide();
     }
 
@@ -155,6 +158,7 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
         this.top = -10000;
         this.left = -10000;
         this.isIn = true;
+        this.isShown = false;
     }
 
     // -------------------------------------------------------------------------
