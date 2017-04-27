@@ -80,6 +80,7 @@ export class PopoverContent implements AfterViewInit, OnDestroy {
     top: number = -10000;
     left: number = -10000;
     isIn: boolean = false;
+    isShown: boolean = false;
     displayType: string = "none";
     effectivePlacement: string;
 
